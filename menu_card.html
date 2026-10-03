@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cozy Cup - Menu</title>
+
+    <style>
+
+        /* =========================
+           BASIC SETTINGS
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff8f0;
+            color: #3e2723;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        nav {
+            height: 70px;
+            background-color: #2b1714;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 40px;
+        }
+
+        nav h2 {
+            color: white;
+            font-size: 28px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #ffb347;
+        }
+
+
+        /* =========================
+           CART BUTTON
+        ========================== */
+
+        .cart-box {
+            text-align: right;
+            padding: 20px 50px 0;
+        }
+
+        .cart-btn {
+            background-color: #d2691e;
+            color: white;
+
+            border: none;
+            border-radius: 25px;
+
+            padding: 12px 22px;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .cart-btn:hover {
+            background-color: #a84d12;
+        }
+
+
+        /* =========================
+           MAIN MENU
+        ========================== */
+
+        .menu {
+            padding: 30px 40px 60px;
+        }
+
+        .menu-title {
+            text-align: center;
+
+            font-size: 38px;
+
+            color: #3e2723;
+
+            margin-bottom: 45px;
+        }
+
+
+        /* =========================
+           CATEGORY
+        ========================== */
+
+        .category {
+            margin-bottom: 50px;
+        }
+
+        .category-title {
+            font-size: 30px;
+
+            color: #6d3b20;
+
+            margin-bottom: 20px;
+
+            text-align: left;
+
+            border-left: 6px solid #d2691e;
+
+            padding-left: 12px;
+        }
+
+
+        /* =========================
+           4 CARDS IN ONE ROW
+        ========================== */
+
+        .menu-container {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 22px;
+        }
+
+
+        /* =========================
+           MENU CARD
+        ========================== */
+
+        .menu-card {
+            background-color: white;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+
+            transition: 0.3s;
+
+            text-align: center;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+        }
+
+
+        /* =========================
+           IMAGE
+        ========================== */
+
+        .menu-card img {
+            width: 100%;
+
+            height: 190px;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+
+        /* =========================
+           CARD INFORMATION
+        ========================== */
+
+        .card-content {
+            padding: 18px 15px 20px;
+        }
+
+        .card-content h3 {
+            font-size: 20px;
+
+            color: #4e342e;
+
+            margin-bottom: 10px;
+        }
+
+        .description {
+            color: #777;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+            min-height: 45px;
+
+            margin-bottom: 12px;
+        }
+
+        .price {
+            color: #d2691e;
+
+            font-size: 21px;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           ADD TO CART BUTTON
+        ========================== */
+
+        .add-cart {
+            background-color: #3e2723;
+
+            color: white;
+
+            border: none;
+
+            padding: 10px 18px;
+
+            border-radius: 20px;
+
+            font-size: 14px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .add-cart:hover {
+            background-color: #d2691e;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 1000px) {
+
+            .menu-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 0 15px;
+            }
+
+            nav h2 {
+                font-size: 22px;
+            }
+
+            nav ul {
+                gap: 10px;
+            }
+
+            nav ul li a {
+                font-size: 13px;
+            }
+
+            .menu {
+                padding: 25px 15px;
+            }
+
+            .menu-container {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-title {
+                font-size: 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav>
+
+        <h2>☕ Cozy Cup</h2>
+
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="menu_card.html">Menu</a>
+            </li>
+
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         CART
+    ========================== -->
+
+    <div class="cart-box">
+
+        <button class="cart-btn">
+
+            🛒 Cart
+            <span id="cart-count">0</span>
+
+        </button>
+
+    </div>
+
+
+
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <section class="menu">
+
+        <h1 class="menu-title">
+            Our Menu
+        </h1>
+
+
+        <!-- =================================================
+             PIZZA SECTION
+        ================================================== -->
+
+        <div class="category">
+
+            <h2 class="category-title">
+                🍕 Pizza
+            </h2>
+
+
+            <div class="menu-container">
+
+
+                <!-- Pizza 1 -->
+
+                <div class="menu-card">
+
+                    <img src="images/Pizza/Cheesy Vegetable Pizza.jpeg"
+                         alt="Cheese Pizza">
+
+                    <div class="card-content">
+
+                        <h3>Cheese Pizza</h3>
+
+                        <p class="description">
+                            Delicious cheesy pizza loaded with
+                            fresh mozzarella and tasty toppings.
+                        </p>
+
+                        <p class="price">
+                            ₹250
+                        </p>
+
+                        <button class="add-cart"
+                                onclick="addToCart()">
+
+                            🛒 Add to Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Pizza 2 -->
+
+                <div class="menu-card">
+
+                    <img src="images/Pizza/Paneer pizza.jpeg"
+                         alt="Paneer Pizza">
+
+                    <div class="card-content">
+
+                        <h3>Paneer Pizza</h3>
+
+                        <p class="description">
+                            Soft paneer cubes with fresh vegetables
+                            and delicious cheesy topping.
+                        </p>
+
+                        <p class="price">
+                            ₹280
+                        </p>
+
+                        <button class="add-cart"
+                                onclick="addToCart()">
+
+                            🛒 Add to Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Pizza 3 -->
+
+                <div class="menu-card">
+
+                    <img src="images/Pizza/Margherita Pizza.jpeg"
+                         alt="Margherita Pizza">
+
+                    <div class="card-content">
+
+                        <h3>Margherita Pizza</h3>
+
+                        <p class="description">
+                            Classic pizza with tomato sauce,
+                             mozzarella and fresh basil.
+                        </p>
+
+                        <p class="price">
+                            ₹230
+                        </p>
+
+                        <button class="add-cart"
+                                onclick="addToCart()">
+
+                            🛒 Add to Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Pizza 4 -->
+
+                <div class="menu-card">
+
+                    <img src="images/Pizza/Rustic Veggie Pizza.jpeg"
+                         alt="Rustic Veggie Pizza">
+
+                    <div class="card-content">
+
+                        <h3>Rustic Veggie Pizza</h3>
+
+                        <p class="description">
+                            A rustic style pizza with fresh veggies,
+                            herbs and rich cheesy flavor.
+                        </p>
+
+                        <p class="price">
+                            ₹270
+                        </p>
+
+                        <button class="add-cart"
+                                onclick="addToCart()">
+
+                            🛒 Add to Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             COFFEE SECTION
+        ================================================== -->
+
+        <div class="category">
+
+            <h2 class="category-title">
+                ☕ Coffee
+            </h2>
+
+
+            <div class="menu-container">
+
+
+                <!-- Coffee 1 -->
+
+                <div class="menu-card">
+
+                    <img src="images/Coffee/Australian cappuccino.jpeg"
+                         alt="Cappuccino">
+
+                    <div class="card-content">
+
+                        <h3>Cappuccino</h3>
+
+                        <p class="description">
+                            Rich and creamy coffee topped with
+                            smooth and beautiful milk foam.
+                        </p>
+
+                        <p class="price">
+                            ₹120
+                        </p>
+
+                        <button class="add-cart"
+                                onclick="addToCart()">
+
+                            🛒 Add to Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Coffee 2 -->
+
+                <div class="menu-card">
+
+                    <img src="images/Coffee/raspberry_raf coffee.jpeg"
+                         alt="Cafe Latte">
+
+                    <div class="card-content">
+
+                        <h3>Raspberry Raf Coffee</h3>
+
+                        <p class="description">
+                           Rich and chermy coffee blended with raspberry flavor.
+                           a sweet and refreshing treat with a fruity twist.
+                        </p>
+
+                        <p class="price">
+                            ₹140
+                        </p>
+
+                        <button class="add-cart"
+                                onclick="addToCart()">
+
+                            🛒 Add to Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Coffee 3 -->
+
+                <div class="menu-card">
+
+                    <img src="images/Coffee/Espresso.jpeg"
+                         alt="Espresso">
+
+                    <div class="card-content">
+
+                        <h3>Espresso</h3>
+
+                        <p class="description">
+                            Strong and aromatic coffee with a
+                            rich and bold espresso flavor.
+                        </p>
+
+                        <p class="price">
+                            ₹100
+                        </p>
+
+                        <button class="add-cart"
+                                onclick="addToCart()">
+
+                            🛒 Add to Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Coffee 4 -->
+
+                <div class="menu-card">
+
+                    <img src="images/Coffee/Flate White.jpeg"
+                         alt="Flat White">
+
+                    <div class="card-content">
+
+                        <h3>Flat White</h3>
+
+                        <p class="description">
+                            Creamy coffee combined with rich
+                            chocolate and delicious milk foam.
+                        </p>
+
+                        <p class="price">
+                            ₹160
+                        </p>
+
+                        <button class="add-cart"
+                                onclick="addToCart()">
+
+                            🛒 Add to Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PASTRIES SECTION
+        ================================================== -->
+
+        <div class="category">
+
+            <h2 class="category-title">
+                🧁 Pastries
+            </h2>
+
+
+            <div class="menu-container">
+
+
+                <!-- Pastry 1 -->
+
+                <div class="menu-card">
+
+                    <img src="images/Pastries/Vanilla Cupcakes.jpeg"
+                         alt="Vanilla Cupcake">
+
+                    <div class="card-content">
+
+                        <h3>Vanilla Cupcake</h3>
+
+                        <p class="description">
+                            Soft vanilla cupcake topped with
+                            smooth and creamy frosting.
+                        </p>
+
+                        <p class="price">
+                            ₹150
+                        </p>
+
+                        <button class="add-cart"
+                                onclick="addToCart()">
+
+                            🛒 Add to Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Pastry 2 -->
+
+                <div class="menu-card">
+
+                    <img src="images/Pastries/Chocolate Chip Cookies.jpeg"
+                         alt="Chocolate Pastry">
+
+                    <div class="card-content">
+
+                        <h3>Chocolate Pastry</h3>
+
+                        <p class="description">
+                            Soft chocolate cake layered with
+                            rich chocolate cream.
+                        </p>
+
+                        <p class="price">
+                            ₹180
+                        </p>
+
+                        <button class="add-cart"
+                                onclick="addToCart()">
+
+                            🛒 Add to Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Pastry 3 -->
+
+                <div class="menu-card">
+
+                    <img src="images/Pastries/Rich Chocolate Cupcakes.jpeg"
+                         alt="Red Velvet">
+
+                    <div class="card-content">
+
+                        <h3>Rich Chocolate Cupcake</h3>
+
+                        <p class="description">
+                            Soft rich chocolate cupcake with creamy
+                            and delicious chocolate frosting.
+                        </p>
+
+                        <p class="price">
+                            ₹190
+                        </p>
+
+                        <button class="add-cart"
+                                onclick="addToCart()">
+
+                            🛒 Add to Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Pastry 4 -->
+
+                <div class="menu-card">
+
+                    <img src="images/Pastries/Chocolate Glazed Donuts.jpeg"
+                         alt="Black Forest">
+
+                    <div class="card-content">
+
+                        <h3>Chocolate Glazed Donut</h3>
+
+                        <p class="description">
+                            Soft and fluffy donut topped with
+                            rich chocolate glaze.
+                        </p>
+
+                        <p class="price">
+                            ₹200
+                        </p>
+
+                        <button class="add-cart"
+                                onclick="addToCart()">
+
+                            🛒 Add to Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        let cartCount = 0;
+
+        function addToCart() {
+
+            cartCount++;
+
+            document.getElementById("cart-count").innerText = cartCount;
+
+            alert("Item added to cart! 🛒");
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

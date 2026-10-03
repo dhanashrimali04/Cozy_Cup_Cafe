@@ -1,0 +1,582 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | Our Cafe</title>
+
+
+    <!-- CSS -->
+    <style>
+
+        /* =========================
+           BASIC RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =========================
+           BODY
+        ========================= */
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e2d2cc;
+            color: #333;
+            min-height: 100vh;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .contact-header {
+            text-align: center;
+            padding: 55px 20px 40px;
+            background-color: #4b2415;
+            border-bottom: 3px solid #f28c28;
+        }
+
+        .contact-header h1 {
+            font-size: 45px;
+            color: #ffb52e;
+            margin-bottom: 15px;
+        }
+
+        .contact-header p {
+            color: #f5d9b5;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           CONTACT SECTION
+        ========================= */
+
+        .contact-section {
+            width: 90%;
+            max-width: 1100px;
+            margin: 50px auto;
+
+            display: flex;
+            gap: 35px;
+        }
+
+
+        /* =========================
+           CONTACT INFORMATION
+        ========================= */
+
+        .contact-info {
+            flex: 1;
+
+            background-color: #4b2415;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            border: 1px solid #8c4525;
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+        }
+
+        .contact-info h2 {
+            color: #ffb52e;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info > p {
+            color: #e8c8a8;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           INFORMATION BOXES
+        ========================= */
+
+        .info-box {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+
+            gap: 15px;
+
+            padding: 15px;
+
+            background-color: #351a10;
+
+            border-radius: 12px;
+
+            border-left: 4px solid #f28c28;
+
+            transition: 0.3s;
+        }
+
+        .info-item:hover {
+            transform: translateX(6px);
+            background-color: #402014;
+        }
+
+        .info-item span {
+            font-size: 27px;
+            min-width: 35px;
+            text-align: center;
+        }
+
+        .info-item h3 {
+            color: #ffd166;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+            color: #e5c7aa;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+
+        /* =========================
+           CONTACT FORM
+        ========================= */
+
+        .contact-form {
+            flex: 1;
+
+            background-color: #fff4e6;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+        }
+
+        .contact-form h2 {
+            color: #4b2415;
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           INPUTS
+        ========================= */
+
+        .input-group {
+            margin-bottom: 18px;
+        }
+
+        .input-group label {
+            display: block;
+
+            color: #4b2415;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            margin-bottom: 7px;
+        }
+
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
+
+            padding: 12px 14px;
+
+            border: 2px solid #e1c4a8;
+
+            border-radius: 10px;
+
+            background-color: white;
+
+            color: #351a10;
+
+            font-size: 14px;
+
+            outline: none;
+
+            font-family: Arial, sans-serif;
+
+            transition: 0.3s;
+        }
+
+        .input-group input:focus,
+        .input-group textarea:focus {
+            border-color: #f28c28;
+
+            box-shadow: 0 0 8px rgba(242, 140, 40, 0.25);
+        }
+
+        .input-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+
+        /* =========================
+           SEND BUTTON
+        ========================= */
+
+        .contact-form button {
+            width: 100%;
+
+            padding: 13px;
+
+            margin-top: 5px;
+
+            border: none;
+
+            border-radius: 25px;
+
+            background-color: #f28c28;
+
+            color: #2b160e;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #ffb52e;
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 6px 15px rgba(242, 140, 40, 0.35);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            background-color: #1c0d08;
+
+            color: #d9b692;
+
+            padding: 22px;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .contact-section {
+                flex-direction: column;
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 550px) {
+
+            .contact-header {
+                padding: 45px 15px 35px;
+            }
+
+            .contact-header h1 {
+                font-size: 35px;
+            }
+
+            .contact-section {
+                width: 94%;
+                margin: 30px auto;
+                gap: 25px;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 25px;
+            }
+
+            .contact-info h2,
+            .contact-form h2 {
+                font-size: 24px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header class="contact-header">
+
+        <h1>Contact Us</h1>
+
+        <p>
+            We'd love to hear from you!
+            <br>
+            Visit us, call us, or simply drop us a message.
+        </p>
+
+        <button onclick="window.location.href='index.html'">
+            Back to Home
+
+    </header>
+
+
+    <!-- =========================
+         CONTACT SECTION
+    ========================= -->
+
+    <section class="contact-section">
+
+
+        <!-- LEFT SIDE -->
+
+        <div class="contact-info">
+
+            <h2>☕ Let's Connect</h2>
+
+            <p>
+                Have a question, suggestion, or just want to say hello?
+                Our team would be happy to hear from you.
+            </p>
+
+
+            <div class="info-box">
+
+
+                <!-- Address -->
+
+                <div class="info-item">
+
+                    <span>📍</span>
+
+                    <div>
+
+                        <h3>Visit Us</h3>
+
+                        <p>
+                            ABC Coffee Street,
+                            Pune, Maharashtra
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Phone -->
+
+                <div class="info-item">
+
+                    <span>📞</span>
+
+                    <div>
+
+                        <h3>Call Us</h3>
+
+                        <p>
+                            +91 xxxxx xxxxx
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="info-item">
+
+                    <span>✉️</span>
+
+                    <div>
+
+                        <h3>Email Us</h3>
+
+                        <p>
+                            hello@cozycup.com
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Opening Hours -->
+
+                <div class="info-item">
+
+                    <span>🕒</span>
+
+                    <div>
+
+                        <h3>Opening Hours</h3>
+
+                        <p>
+                            Monday - Sunday
+                            <br>
+                            10:00 AM - 10:00 PM
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="contact-form">
+
+            <h2>Send Us a Message</h2>
+
+
+            <form>
+
+
+                <!-- Name -->
+
+                <div class="input-group">
+
+                    <label for="name">
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="input-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Subject -->
+
+                <div class="input-group">
+
+                    <label for="subject">
+                        Subject
+                    </label>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        placeholder="Enter subject"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Message -->
+
+                <div class="input-group">
+
+                    <label for="message">
+                        Your Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Write your message here..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Button -->
+
+                <button type="submit">
+                    Send Message ✨
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Our Café
+            | Fresh • Delicious • Made With Love ❤️
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+```

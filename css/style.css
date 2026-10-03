@@ -1,0 +1,286 @@
+/* ==================================================
+   GENERAL STYLING
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #fff8f0;
+    color: #3e2723;
+}
+
+
+/* ==================================================
+   NAVBAR
+================================================== */
+
+nav {
+    width: 100%;
+    background-color: #4e342e;
+
+    padding: 18px 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+
+/* Cafe Logo */
+
+.logo {
+    color: #ffe0b2;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: white;
+}
+
+
+/* Navigation Links */
+
+nav ul {
+    list-style: none;
+
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffcc80;
+}
+
+
+/* ==================================================
+   HERO SECTION
+================================================== */
+
+.hero {
+    min-height: 520px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+    background:
+        linear-gradient(
+            rgba(62, 39, 35, 0.65),
+            rgba(62, 39, 35, 0.65)
+        ),
+        url("cafe.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Hero Content */
+
+.hero-content {
+    color: white;
+
+    max-width: 700px;
+}
+
+
+/* Main Heading */
+
+.hero-content h1 {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+}
+
+
+/* Highlighted Cafe Name */
+
+.hero-content h1 span {
+    color: #ffcc80;
+}
+
+
+/* Hero Paragraph */
+
+.hero-content p {
+    font-size: 20px;
+
+    line-height: 1.6;
+
+    margin-bottom: 30px;
+}
+
+
+/* Button */
+
+.btn {
+    display: inline-block;
+
+    padding: 13px 30px;
+
+    background-color: #d2691e;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #8d4b20;
+
+    transform: scale(1.05);
+}
+
+
+/* ==================================================
+   WELCOME SECTION
+================================================== */
+
+.welcome {
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+.welcome h2 {
+    font-size: 35px;
+
+    margin-bottom: 15px;
+
+    color: #5d4037;
+}
+
+.welcome p {
+    max-width: 700px;
+}  
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #4b2e1f;
+}
+
+/* Logo */
+.logo {
+    color: #fff3d6;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #f4b942;
+}
+
+/* Navigation List */
+nav ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Buttons */
+nav ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: #4b2e1f;
+    background-color: #f4c27a;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+nav ul li a:hover {
+    background-color: #fff3d6;
+    color: #4b2e1f;
+    transform: translateY(-2px);
+}
+
+/* Menu page style  */
+
+ 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fff8f0;
+            color: #3e2723;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            width: 100%;
+            background-color: #4e342e;
+            padding: 18px 60px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            color: #ffe0b2;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ffffff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+
+        }

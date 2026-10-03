@@ -1,0 +1,441 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cozy Cup Cafe</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fff8f0;
+            color: #3e2723;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            width: 100%;
+            background-color: #4e342e;
+            padding: 18px 60px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            color: #ffe0b2;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ffffff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc80;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 520px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            padding: 50px 20px;
+
+            background:
+                linear-gradient(rgba(62, 39, 35, 0.65),
+                    rgba(62, 39, 35, 0.65)),
+                url("cafe.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            color: white;
+            max-width: 700px;
+        }
+
+        .hero-content h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 span {
+            color: #ffcc80;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 30px;
+
+            background-color: #d2691e;
+            color: white;
+
+            text-decoration: none;
+            border-radius: 25px;
+
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #8d4b20;
+            transform: scale(1.05);
+        }
+
+        /* ================= WELCOME ================= */
+
+        .welcome {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .welcome h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+            color: #5d4037;
+        }
+
+        .welcome p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.7;
+            color: #6d4c41;
+        }
+
+        /* ================= MENU ================= */
+
+        .menu {
+            padding: 60px 8%;
+            background-color: #fff3e0;
+            text-align: center;
+        }
+
+        .menu h2 {
+            font-size: 35px;
+            margin-bottom: 35px;
+            color: #5d4037;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 270px;
+            background-color: white;
+
+            border-radius: 15px;
+            overflow: hidden;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            margin-bottom: 10px;
+            color: #4e342e;
+        }
+
+        .card-content p {
+            color: #795548;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            color: #d2691e;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            padding: 70px 10%;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+            color: #5d4037;
+        }
+
+        .about p {
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.8;
+            color: #6d4c41;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background-color: #4e342e;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .contact h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            margin: 8px;
+            color: #ffe0b2;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background-color: #2d1b18;
+            color: #ddd;
+
+            text-align: center;
+            padding: 18px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 38px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <div class="logo">
+            ☕ Cozy <span>Cup</span>
+        </div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu_card.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+           
+        </ul>
+
+    </nav>
+
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Welcome to <span>Cozy Cup</span>
+            </h1>
+
+            <p>
+                Fresh Coffee • Delicious Food • Beautiful Moments
+            </p>
+
+            <a href="menu_card.html" class="btn">
+                Explore Our Menu
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= WELCOME SECTION ================= -->
+
+    <section class="welcome">
+
+        <h2>☕ A Place to Relax & Enjoy</h2>
+
+        <p>
+            Welcome to Cozy Cup Cafe, where every cup of coffee
+            is prepared with love. Enjoy delicious food, refreshing
+            beverages and a peaceful atmosphere with your friends
+            and family.
+        </p>
+
+    </section>
+
+
+    <!-- ================= MENU SECTION ================= -->
+
+    <section class="menu">
+
+        <h2>Our Popular Items</h2>
+
+        <div class="cards">
+
+            <!-- Card 1 -->
+
+            <div class="card">
+
+                <img src="images/Coffee/Australian cappuccino.jpeg" alt="Coffee" width="200" height="200">
+
+                <div class="card-content">
+
+                    <h3>☕ Cappuccino</h3>
+
+                    <p>
+                        Rich and creamy coffee with perfect foam.
+                    </p>
+
+                    <div class="price">₹120</div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Card 2 -->
+
+            <div class="card">
+
+                <img src="images/Pizza/Cheesy Vegetable Pizza.jpeg" alt="Pizza" width="200" height="200">
+
+                <div class="card-content">
+
+                    <h3>🍕 Cheese Pizza</h3>
+
+                    <p>
+                        Hot and cheesy pizza with delicious toppings.
+                    </p>
+
+                    <div class="price">₹250</div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Card 3 -->
+
+            <div class="card">
+
+                <img src="images/Pastries/Vanilla Cupcakes.jpeg" alt="Cake" width="200" height="200">
+
+                <div class="card-content">
+
+                    <h3>🍰 Vanilla Cupcakes</h3>
+
+                    <p> Soft and delicious vanilla cupcakes. </p>
+                    <div class="price">₹150</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ================= ABOUT SECTION ================= -->
+
+    <section class="about">
+        <h2>About Our Cafe</h2>
+        <p> Cozy Cup Cafe is a friendly place where people can enjoy freshly prepared food and beverages. Our goal is to
+            provide tasty food, quality service and a comfortable environment for everyone. </p>
+    </section>
+
+
+    <!-- ================= CONTACT SECTION ================= -->
+    <section class="contact">
+        <h2>📞 Visit Us</h2>
+        <p>📍 Main Road, Pune, Maharashtra</p>
+        <p>📞 +91 xxxxx xxxxx </p>
+        <p>✉️ cozycup@gmail.com</p>
+        <p>🕐 Monday - Sunday : 9:00 AM - 10:00 PM</p>
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <p> © 2026 Cozy Cup Cafe | All Rights Reserved </p>
+    </footer>
+</body>
+
+</html>
